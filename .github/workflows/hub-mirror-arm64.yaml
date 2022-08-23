@@ -14,9 +14,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        arch: [aarch64]
+        arch: [x86_64, aarch64]
     # 运行环境
-    runs-on: self-hosted
+    runs-on:  ${{ fromJson('{"x86_64":"ubuntu-latest", "aarch64":["self-hosted", "Linux", "ARM64"]}')[matrix.arch] }}
     # 运行条件 => issues 的 label 包含 
     
     if: contains(github.event.issue.labels.*.name, 'hub-mirror-arm64')
