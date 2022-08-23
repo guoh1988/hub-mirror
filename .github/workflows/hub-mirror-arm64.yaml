@@ -16,7 +16,7 @@ jobs:
       matrix:
         arch: [aarch64]
     # 运行环境
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     # 运行条件 => issues 的 label 包含 
     
     if: contains(github.event.issue.labels.*.name, 'hub-mirror-arm64')
