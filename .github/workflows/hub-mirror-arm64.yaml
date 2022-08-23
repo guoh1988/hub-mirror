@@ -11,6 +11,10 @@ on:
 jobs:
   # 镜像转换任务
   mirror_transition:
+    strategy:
+      fail-fast: false
+      matrix:
+        arch: [aarch64]
     # 运行环境
     runs-on: ubuntu-latest
     # 运行条件 => issues 的 label 包含 hub-mirror
